@@ -3,6 +3,8 @@ package com.shreemanancareercenter.controller;
 
 
 public class Student {
+	
+	private int studentId;
 	private String studentName;
 	private String studentFathersName;
 	private String studentsDOB;
@@ -15,4 +17,6 @@ public class Student {
 	private Address address;
 	
 	private Course course;
+	
+	private Fee fee;
 }
