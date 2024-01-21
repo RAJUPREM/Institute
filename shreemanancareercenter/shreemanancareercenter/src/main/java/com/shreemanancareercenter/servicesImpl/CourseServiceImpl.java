@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.shreemanancareercenter.entity.Course;
 import com.shreemanancareercenter.repository.CourseRepository;
+import com.shreemanancareercenter.repository.SubjectRepository;
 import com.shreemanancareercenter.services.CourseService;
 
 
@@ -15,6 +16,9 @@ public class CourseServiceImpl implements CourseService{
 
 	@Autowired
 	CourseRepository courseRepository;
+	
+	@Autowired
+	SubjectRepository subjectRepository;
 	
 	@Override
 	public void addCourse(Course course) {
