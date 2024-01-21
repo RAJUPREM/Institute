@@ -10,22 +10,24 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class Course {
 	
-	public Course() {
-		super();
-	}
-
-
 	public Course(int courseId, String courseName, String courseDetails, String courseDuration, int courseCharge,
-			List<Subject> subjectList, List<CourseSyllabus> courseSyllabusList) {
+			List<CourseSyllabus> courseSyllabusList) {
 		super();
 		this.courseId = courseId;
 		this.courseName = courseName;
 		this.courseDetails = courseDetails;
 		this.courseDuration = courseDuration;
 		this.courseCharge = courseCharge;
-		this.subjectList = subjectList;
 		this.courseSyllabusList = courseSyllabusList;
 	}
+
+
+	public Course() {
+		super();
+	}
+
+
+	
 
 
 	@Id
@@ -36,8 +38,8 @@ public class Course {
 	 private String courseDuration;
 	 private int courseCharge;
 
-	 @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	 private List<Subject> subjectList;
+//	 @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+//	 private List<Subject> subjectList;
 	 
 	 
 	 @JsonManagedReference
@@ -95,14 +97,7 @@ public class Course {
 	}
 
 
-	public List<Subject> getSubjectList() {
-		return subjectList;
-	}
-
-
-	public void setSubjectList(List<Subject> subjectList) {
-		this.subjectList = subjectList;
-	}
+	
 
 
 	public List<CourseSyllabus> getCourseSyllabusList() {
@@ -118,8 +113,11 @@ public class Course {
 	@Override
 	public String toString() {
 		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", courseDetails=" + courseDetails
-				+ ", courseDuration=" + courseDuration + ", courseCharge=" + courseCharge + ", subjectList="
-				+ subjectList + ", courseSyllabusList=" + courseSyllabusList + "]";
+				+ ", courseDuration=" + courseDuration + ", courseCharge=" + courseCharge + ", courseSyllabusList="
+				+ courseSyllabusList + "]";
 	}
+
+
+	
 
 }
