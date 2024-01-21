@@ -1,5 +1,8 @@
-package com.shreemanancareercenter.controller;
+package com.shreemanancareercenter.entity;
 
+import jakarta.persistence.*;
+
+@Embeddable
 public class Address {
 	
 	public Address() {
